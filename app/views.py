@@ -10,7 +10,7 @@ def index():
 
 @app.route('/ip')
 def ip():
-    return request.remote_addr
+    return equest.access_route[0]
 
 @app.route('/user-agent')
 def userAgent():
