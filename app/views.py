@@ -5,7 +5,7 @@ from app import app
 @app.route('/')
 @app.route('/index')
 def index():
-    data = { 'ip': request.remote_addr, 'user_agent': request.user_agent.string }
+    data = { 'ip': request.access_route[0], 'user_agent': request.user_agent.string }
     return render_template("index.html", data = data)
 
 @app.route('/ip')
