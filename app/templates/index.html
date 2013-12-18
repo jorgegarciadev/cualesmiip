@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{data.ip}}</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <!-- Les hojas de estilo olé -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+  </head>
+  <body>
+    <div class="container">
+      <img src="{{ url_for('static', filename='images/logo.png') }}" >
+      <p>Your IP is:</p>
+      <h1>{{data.ip}}</h1>
+      <p>And you User Agent:</p>
+      <h3>{{data.user_agent}}<h3>
+    </div>
+  </body>
+  <!-- Les scripts olé -->
+  <script>
+  </script>
+</html>
