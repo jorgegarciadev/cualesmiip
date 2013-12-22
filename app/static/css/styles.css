@@ -24,3 +24,7 @@ body {
     position: absolute;
     width: 90%;
 }
+
+#js {
+  margin-top: 40px;
+}

@@ -16,9 +16,15 @@
       <h1>{{data.ip}}</h1>
       <p>And you User Agent:</p>
       <h3>{{data.user_agent}}<h3>
+      <h3 id="js">
+        <script type="text/javascript">
+          document.getElementById("js").innerHTML = "Javascript is enabled."
+        </script>
+        <noscript>Javascript is disabled.</noscript>
+      </h3>
     </div>
   </body>
   <!-- Les scripts olé -->
-  <script>
+  <script> 
   </script>
 </html>
