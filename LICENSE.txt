@@ -1,4 +1,4 @@
-Service based in Flask for getting your IP and your browser User Agent.
+Service based in Flask for getting your IP and your browser's User Agent.
 
 Copyright (c) 2013 Jorge García - https://github.com/jorgegarciadev
 
