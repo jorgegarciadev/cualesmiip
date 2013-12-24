@@ -5,6 +5,13 @@
   src: local('Helvetica Neue Light'), local('HelveticaNeue-Light'), url('../fonts/HelveticaNeue-Light.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Glifos';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../fonts/Glifos.woff');
+}
+
 body {
     background-color: #2971a7;
     text-align: center;
@@ -21,4 +28,29 @@ body {
 
 #js {
   margin-top: 40px;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "Glifos";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+}
+ 
+.icon-ok:before {
+  content: '\e802';
+  color: #56af31;
+}
+.icon-cancel:before {
+  content: '\e803';
+  color: #cc4746;
 }
