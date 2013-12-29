@@ -2,8 +2,24 @@
 
 import httplib, re
 
-def validateURL(url):
-    pass
+def validator(userUrl):
+    # http://regex101.com/r/pB0rD4
+    pattern = '(http://)?(((www\.)?(\w+\.)+([a-z]{2,6}))|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}))'
+    matched = re.match(pattern, userUrl, re.IGNORECASE)
+
+    url = matched.group(0)
+    scheme = matched.group(1)
+    host = matched.group(2)
+    # path is ignored
+
+    if scheme:
+        return url
+    else:
+        return 'http://' + host
+
+
+
+    
 
 class UrlParser(object):
     def __init__(self, url):
