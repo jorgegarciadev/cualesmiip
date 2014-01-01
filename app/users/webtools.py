@@ -16,10 +16,7 @@ def validator(userUrl):
         return url
     else:
         return 'http://' + host
-
-
-
-    
+   
 
 class UrlParser(object):
     def __init__(self, url):
@@ -55,6 +52,7 @@ class UrlParser(object):
 #             self.StatusCode = None
 #             self.Response = None
 #             return (self.StatusCode, self.Response)
+
 
 def pokeSite(host, path = "/"):
     try:

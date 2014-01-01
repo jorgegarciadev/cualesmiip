@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>¿Cuál es mi IP?</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" />
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- Les hojas de estilo olé -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
-  </head>
-  <body>
+<!-- extends from base template -->
+{% extends "base.html" %}
+
+{% block content %}
     <div class="container">
       <img src="{{ url_for('static', filename='images/logo.png') }}" >
       <p>Your IP is:</p>
@@ -21,9 +12,7 @@
         <span class='icon-cancel'></span> Javascript is disabled
       </h3>
     </div>
-  </body>
-  <!-- Les scripts olé -->
-  <script type="text/javascript">
+    <script type="text/javascript">
     document.getElementById("js").innerHTML = "<span class='icon-ok'></span> Javascript is enabled";
-  </script>
-</html>
+    </script>
+{% endblock %}

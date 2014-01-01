@@ -13,17 +13,22 @@
 }
 
 body {
-    background-color: #2971a7;
+    background-color: #F6F6F6;
     text-align: center;
     font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
     letter-spacing: 0em; 
-    color: #fff;
+    color: #2971a7;
 }
 
+h1 {
+    font-size: 3em;
+    margin: 0.4em 0;
+}
 .container {
-    margin: 5%;
-    position: absolute;
+    margin: 0 auto;
     width: 90%;
+    margin-top: 20%;
+    text-shadow: 1px 1px 1px #ccc;
 }
 
 #js {
