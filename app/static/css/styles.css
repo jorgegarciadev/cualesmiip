@@ -17,7 +17,7 @@ body {
     text-align: center;
     font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
     letter-spacing: 0em; 
-    color: #2971a7;
+    color: #5F7883;
 }
 
 h1 {
@@ -28,7 +28,6 @@ h1 {
     margin: 0 auto;
     width: 90%;
     margin-top: 20%;
-    text-shadow: 1px 1px 1px #ccc;
 }
 
 #js {
