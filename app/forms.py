@@ -3,4 +3,4 @@ from wtforms import TextField
 from wtforms.validators import Required
 
 class TextInput(Form):
-    url = TextField('foobar', validators = [Required()])
+    url = TextField('url', default = 'twitter.com', validators = [Required()])

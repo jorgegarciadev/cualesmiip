@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-from flask import request
-from flask import render_template
+from flask import request, render_template
 from app import app
 from forms import TextInput
+from app.users.webtools import validator, pokeSite
 
 @app.route('/')
 @app.route('/index')
@@ -31,4 +31,11 @@ def test():
 @app.route('/isdownorwhat', methods = ['GET', 'POST'])
 def isdownorwhat():
     form = TextInput()
+    if form.validate_on_submit():
+        url = form.url.data
+        url = validator(url)
+        pene = pokeSite(url[2])
+        return pene[0] + ' - ' + pene[1]
+
     return render_template('isdownorwhat.html', form = form, title = u"¿Está caido o qué?")
+

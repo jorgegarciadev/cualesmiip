@@ -7,15 +7,18 @@ def validator(userUrl):
     pattern = '(http://)?(((www\.)?(\w+\.)+([a-z]{2,6}))|(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}))'
     matched = re.match(pattern, userUrl, re.IGNORECASE)
 
-    url = matched.group(0)
-    scheme = matched.group(1)
-    host = matched.group(2)
-    # path is ignored
-
-    if scheme:
-        return url
+    if matched:
+        url = matched.group(0)
+        scheme = matched.group(1)
+        host = matched.group(2)
     else:
-        return 'http://' + host
+        return None
+    # path is ignored
+    if not scheme:
+        url = 'http://' + host
+        scheme = 'http://'
+
+    return (url, scheme, host)
    
 
 class UrlParser(object):
@@ -61,10 +64,10 @@ def pokeSite(host, path = "/"):
         statusCode = conn.getresponse().status
         response = httplib.responses[statusCode]
 
-        return (statusCode, response)
+        return (str(statusCode), response)
     
     except StandardError:
         statusCode = None
         response = None
 
-        return (statusCode, response)
+        return (str(statusCode), response)
