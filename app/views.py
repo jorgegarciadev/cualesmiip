@@ -3,7 +3,7 @@
 from flask import request, render_template
 from app import app
 from forms import TextInput
-from app.users.webtools import validator, pokeSite
+from app.users.webtools import validator, pokeSite, answer
 
 @app.route('/')
 @app.route('/index')
@@ -28,14 +28,14 @@ def test():
 
 # Just for the funnies
 
-@app.route('/isdownorwhat', methods = ['GET', 'POST'])
+@app.route('/estacaido', methods = ['GET', 'POST'])
 def isdownorwhat():
     form = TextInput()
     if form.validate_on_submit():
-        url = form.url.data
-        url = validator(url)
-        pene = pokeSite(url[2])
-        return pene[0] + ' - ' + pene[1]
+        form.url.data
+        data = answer(form.url.data)
+        
+        return render_template('isdownorwhat.html', data =data, form = form, title = u"¿Está caido o qué?", value = form.url.data)
 
-    return render_template('isdownorwhat.html', form = form, title = u"¿Está caido o qué?")
+    return render_template('isdownorwhat.html', form = form, title = u"¿Está caido o qué?", value = 'github.com')
 

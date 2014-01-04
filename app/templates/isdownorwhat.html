@@ -2,13 +2,51 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Sign In</h1>
+    <!--<h1>Sign In</h1>
     <form action="" method="post" name="manolo">
       {{form.hidden_tag()}}
       <p>
           is down or what?<br>
-          {{form.url(size=80)}}<br>
+          {{form.url(size=80, onclick='clear(this)')}}<br>
       </p>
       <p><input type="submit" value="Sign In"></p>
+    </form>-->
+    <div class="container">
+      <form action="" method="post" name="manolo">
+        {{form.hidden_tag()}}
+        <div id="question">¿está {{form.url(size=50, onclick='empty(this)', id='url', value=value)}} caido o <a href="#" onclick="submitform()" id="what">qué</a>?</div>
+      <noscript><input type="submit" value="Send"></noscript>
     </form>
+    {% if data %}
+    <div id="answer">{{data}}</div>
+    {% endif %}
+    </div>
+    <script>
+        var input = 'input[name="url"]'
+        String.prototype.width = function() {
+            var f = "2.5em 'Helvetica Neue Light'",
+            o = $('<div>' + this + '</div>')
+            .css({'position': 'absolute', 'float': 'left', 'white-space': 'nowrap', 'visibility': 'hidden', 'font': f})
+            .appendTo($('body')),
+            w = o.width();
+            o.remove();
+            return w;
+        }
+        function resize() {
+            var width = $(input).val().width()
+            $(input).css({'width': width})
+        }
+        function empty(e) {
+            if (e.cleared) { return; }
+            e.cleared = true;
+            e.value = '';
+            resize()
+        }
+        function submitform() {
+        document.manolo.submit();
+        }
+
+        window.onload = function(){resize()}
+        $(input).keyup(resize)
+    </script>
 {% endblock %}
