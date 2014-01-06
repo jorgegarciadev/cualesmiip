@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/normalize.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
     <script src="{{ url_for('static', filename='js/jquery-2.0.3.min.js') }}"></script>
-  </head>
-  <body>
-    {% block content %}{% endblock %}
+  {% block content %}{% endblock %}
+  <footer>
+    <a href="https://twitter.com/jorgegarciadev" target="_blank" class="icon-twitter-squared big"></a><span class="big">·</span><a href="https://github.com/jorgegarciadev" target="_blank" class="icon-github-squared big"></a>| Escrito y diseñado por <a target="_blank" href="http://jorgegarcia.co.vu/">Jorge García</a>. Hospedado en <a target="_blank" href="https://www.heroku.com/">Heroku.</a>
+  </footer>
   </body>
-  <!-- Les scripts olé --> 
 </html>

@@ -75,6 +75,19 @@ input[name="url"] {
   margin-top: 40px;
 }
 
+footer {
+  font-size: .8em;
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+  margin:10px;
+}
+
+footer a {
+  color: #358cce;
+  text-decoration: none;
+}
+
 [class^="icon-"]:before, [class*=" icon-"]:before {
   font-family: "Glifos";
   font-style: normal;
@@ -90,7 +103,7 @@ input[name="url"] {
   line-height: 1em;
   margin-left: .2em;
 }
- 
+
 .icon-ok:before {
   content: '\e802';
   color: #56af31;
@@ -98,4 +111,16 @@ input[name="url"] {
 .icon-cancel:before {
   content: '\e803';
   color: #cc4746;
+}
+.icon-github-squared:before {
+  content: '\e804';
+}
+.icon-twitter-squared:before {
+  content: '\e805';
+}
+
+.big {
+  font-size: 1.8em;
+  vertical-align:middle;
+  color: #5F7883;
 }

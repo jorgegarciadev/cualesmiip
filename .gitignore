@@ -3,3 +3,4 @@ venv
 *.zip
 idle.py
 plantilla.html
+*.old
