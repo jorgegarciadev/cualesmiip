@@ -124,3 +124,15 @@ footer a {
   vertical-align:middle;
   color: #5F7883;
 }
+
+@media (max-width: 800px) {
+#question, #answer{
+  font-size: 1.5em;
+  margin: 1em;
+}
+input[name="url"] {
+  width: 194px;
+  min-width: 10px;
+  max-width: 400px;
+}
+}

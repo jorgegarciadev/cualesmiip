@@ -17,7 +17,9 @@
     <script>
         var input = 'input[name="url"]'
         String.prototype.width = function() {
-            var f = "2.5em 'Helvetica Neue Light'",
+            var w = screen.width
+            if (w > 800) {var f = "2.5em 'Helvetica Neue Light'"}
+            else {var f = "1.5em 'Helvetica Neue Light'"}
             o = $('<div>' + this + '</div>')
             .css({'position': 'absolute', 'float': 'left', 'white-space': 'nowrap', 'visibility': 'hidden', 'font': f})
             .appendTo($('body')),
