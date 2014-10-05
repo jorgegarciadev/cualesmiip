@@ -4,3 +4,4 @@ venv
 idle.py
 plantilla.html
 *.old
+.DS_Store
