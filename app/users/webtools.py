@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import httplib, re
+import http.client, re
 
 def validator(userUrl):
     # http://regex101.com/r/pB0rD4
@@ -24,10 +24,10 @@ def validator(userUrl):
 
 def pokeSite(host, path = "/"):
     try:
-        conn = httplib.HTTPConnection(host)
+        conn = http.client.HTTPConnection(host)
         conn.request("HEAD", path)
         statusCode = conn.getresponse().status
-        response = httplib.responses[statusCode]
+        response = http.client.responses[statusCode]
 
         return {'code': statusCode, 'response':response}
     

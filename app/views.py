@@ -2,7 +2,7 @@
 
 from flask import request, render_template
 from app import app
-from forms import TextInput
+from app.users.forms import TextInput
 from app.users.webtools import validator, pokeSite, answer
 
 @app.route('/')
