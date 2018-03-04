@@ -1,0 +1,27 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+click = "*"
+flask = "*"
+flask-wtf = "*"
+gunicorn = "*"
+itsdangerous = "*"
+"jinja2" = "*"
+markupsafe = "*"
+werkzeug = "*"
+wtforms = "*"
+
+
+[requires]
+
+python_full_version = "3.6.4"
